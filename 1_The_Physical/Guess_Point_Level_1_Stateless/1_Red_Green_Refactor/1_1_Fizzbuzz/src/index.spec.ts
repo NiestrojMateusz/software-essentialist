@@ -22,10 +22,17 @@ describe("fizzbuzz", () => {
     }
   );
 
-  it.each([5, 10, 15])(
+  it.each([5, 10, 20])(
     "outputs buzz, for mulitples of 5, such as %i",
     (num: number) => {
       expect(fizzbuzz(num)).toBe("buzz");
+    }
+  );
+
+  it.each([15, 30, 45])(
+    "outputs fizzbuzz, for mulitples of 3 and 5, such as %i",
+    (num: number) => {
+      expect(fizzbuzz(num)).toBe("fizzbuzz");
     }
   );
 });
