@@ -14,4 +14,11 @@ describe("fizzbuzz", () => {
   it("should does not accept numbers over 100", () => {
     expect(() => fizzbuzz(101)).toThrow("Too large");
   });
+
+  it.each([3, 6, 9])(
+    "outputs fizz, for mulitples of 3, such as %i",
+    (num: number) => {
+      expect(fizzbuzz(num)).toBe("fizz");
+    }
+  );
 });
