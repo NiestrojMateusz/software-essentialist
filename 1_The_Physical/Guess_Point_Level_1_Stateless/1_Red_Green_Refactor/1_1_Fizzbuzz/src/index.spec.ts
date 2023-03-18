@@ -16,21 +16,21 @@ describe("fizzbuzz", () => {
   });
 
   it.each([3, 6, 9])(
-    "outputs fizz, for mulitples of 3, such as %i",
+    "should outputs fizz, for mulitples of 3, such as %i",
     (num: number) => {
       expect(fizzbuzz(num)).toBe("fizz");
     }
   );
 
   it.each([5, 10, 20])(
-    "outputs buzz, for mulitples of 5, such as %i",
+    "should outputs buzz, for mulitples of 5, such as %i",
     (num: number) => {
       expect(fizzbuzz(num)).toBe("buzz");
     }
   );
 
   it.each([15, 30, 45])(
-    "outputs fizzbuzz, for mulitples of 3 and 5, such as %i",
+    "should outputs fizzbuzz, for mulitples of 3 and 5, such as %i",
     (num: number) => {
       expect(fizzbuzz(num)).toBe("fizzbuzz");
     }
