@@ -8,4 +8,9 @@ describe('palindrome checker', () => {
     it.each(["bill", "essentialist"])('should be able to tell that "%s" is not a palindrome', (word: string) => {
         expect(isPalindrome(word)).toBeFalsy();
     });
+
+
+    it.each(["Mom", "mOm", "woW"])('should be able to tell that "%s" is a palindrome when various casing', (word: string) => {
+        expect(isPalindrome(word)).toBeTruthy();
+    });
 })
