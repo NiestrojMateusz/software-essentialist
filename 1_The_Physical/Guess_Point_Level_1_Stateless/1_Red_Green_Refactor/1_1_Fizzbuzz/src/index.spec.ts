@@ -21,4 +21,11 @@ describe("fizzbuzz", () => {
       expect(fizzbuzz(num)).toBe("fizz");
     }
   );
+
+  it.each([5, 10, 15])(
+    "outputs buzz, for mulitples of 5, such as %i",
+    (num: number) => {
+      expect(fizzbuzz(num)).toBe("buzz");
+    }
+  );
 });
