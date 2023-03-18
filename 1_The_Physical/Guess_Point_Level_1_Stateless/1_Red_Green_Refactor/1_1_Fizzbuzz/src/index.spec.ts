@@ -35,4 +35,11 @@ describe("fizzbuzz", () => {
       expect(fizzbuzz(num)).toBe("fizzbuzz");
     }
   );
+
+  it.each([1, 2, 4])(
+    "should outputs non-fizz, buzz, or fizzbuzz numbers such as 1, 2, and 4 strings",
+    (num: number) => {
+      expect(typeof fizzbuzz(num) === "string").toBeTruthy();
+    }
+  );
 });
