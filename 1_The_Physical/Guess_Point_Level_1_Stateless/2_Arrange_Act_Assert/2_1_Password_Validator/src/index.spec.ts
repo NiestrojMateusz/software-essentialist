@@ -16,5 +16,15 @@ describe('password validator', () => {
             length: 'Password should have length between 5 and 15 characters',
         });
     });
+
+    it('should return an object with result true', () => {
+        const result = passwordValidator(correctPassword);
+
+        expect(result.result).toBe(true);
+    });
+
+    it('should return an object with result false', () => {
+        expect(passwordValidator(tooLongPassword)).toHaveProperty('result', false);
+    });
 })
 
