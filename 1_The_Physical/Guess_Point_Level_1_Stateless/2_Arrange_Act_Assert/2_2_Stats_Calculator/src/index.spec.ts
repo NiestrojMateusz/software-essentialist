@@ -38,4 +38,27 @@ describe("Stats Calculator", () => {
 
     expect(result).toHaveProperty('minValue', expected)
   });
+
+  it.each([
+      {
+        expected: 32,
+        numbers: exampleSeq1,
+      },
+      {
+        expected: 45,
+        numbers: exampleSeq2,
+      },
+      {
+        expected: 42,
+        numbers: exampleSeq3,
+      },
+    ]
+  )
+  ("should calculate the maximum value ($expected) of a sequence of integers $numbers", ({expected, numbers}) => {
+    const statsCalc = new StatsCalculator();
+
+    const result = statsCalc.calculate(numbers);
+
+    expect(result).toHaveProperty('maxValue', expected)
+  });
 });

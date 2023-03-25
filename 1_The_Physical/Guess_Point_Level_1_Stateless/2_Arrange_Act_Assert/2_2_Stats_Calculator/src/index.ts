@@ -2,7 +2,7 @@ export class StatsCalculator {
     calculate(input: number[]) {
         return {
             minValue: this.getMinValue(input),
-            maxValue: null,
+            maxValue: this.getMaxValue(input),
             elementsInSequence: null,
             avg: null
         }
@@ -10,6 +10,11 @@ export class StatsCalculator {
 
     private getMinValue(input: number[]) {
         return this.sortNumsAscending(input)[0]
+    }
+
+    private getMaxValue(input: number[]) {
+        const lastIndex = input.length - 1;
+        return this.sortNumsAscending(input)[lastIndex]
     }
 
     private sortNumsAscending(input: number[]) {
