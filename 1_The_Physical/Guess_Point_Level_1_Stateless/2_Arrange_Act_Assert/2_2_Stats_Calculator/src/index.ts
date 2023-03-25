@@ -1,20 +1,13 @@
 export class StatsCalculator {
     calculate(input: number[]) {
+        const sortedSequence = this.sortNumsAscending(input);
+
         return {
-            minValue: this.getMinValue(input),
-            maxValue: this.getMaxValue(input),
+            minValue: sortedSequence[0],
+            maxValue: sortedSequence[input.length - 1],
             elementsInSequence: null,
             avg: null
         }
-    }
-
-    private getMinValue(input: number[]) {
-        return this.sortNumsAscending(input)[0]
-    }
-
-    private getMaxValue(input: number[]) {
-        const lastIndex = input.length - 1;
-        return this.sortNumsAscending(input)[lastIndex]
     }
 
     private sortNumsAscending(input: number[]) {
