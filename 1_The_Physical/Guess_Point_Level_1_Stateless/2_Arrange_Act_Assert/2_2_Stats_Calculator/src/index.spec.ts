@@ -1,5 +1,9 @@
 import { StatsCalculator } from ".";
 
+const exampleSeq1 = [7, 12, -5, 0, 32, 18];
+const exampleSeq2 = [45, 23, -8, -15, 10, 5, 27];
+const exampleSeq3 = [15, -10, 30, 20, 9, -7, 42];
+
 describe("Stats Calculator", () => {
   it('should return the object with stats', () => {
     const statsCalc = new StatsCalculator();
@@ -15,15 +19,15 @@ describe("Stats Calculator", () => {
   it.each([
       {
         expected: -5,
-        numbers: [7, 12, -5, 0, 32, 18],
+        numbers: exampleSeq1,
       },
       {
         expected: -15,
-        numbers: [45, 23, -8, -15, 10, 5, 27],
+        numbers: exampleSeq2,
       },
       {
         expected: -10,
-        numbers: [15, -10, 30, 20, 9, -7, 42],
+        numbers: exampleSeq3,
       },
     ]
   )
