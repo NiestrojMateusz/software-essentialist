@@ -5,6 +5,7 @@ describe('password validator', () => {
     const tooLongPassword = 'Tncorrectpasssssssssssssssssssss1';
     const tooShortPassword = 'T';
     const missingDigitPassword = 'NoDigitPass';
+    const missingUppercasePassword = 'noupperpass1';
 
     it('should have length between 5 and 15 characters', () => {
         expect(passwordValidator(tooShortPassword).result).toBeFalsy();
@@ -33,6 +34,13 @@ describe('password validator', () => {
             missingDigit: 'Password should have at least one digit',
         });
         expect(passwordValidator(missingDigitPassword)).toHaveProperty('result', false);
+    })
+
+    it('should return missingUppercase error key and message for passwords with no uppercase letter as noupperpass1', () => {
+        expect(passwordValidator(missingUppercasePassword)).toHaveProperty('errors', {
+            missingUppercase: 'Password should have at least one uppercase character',
+        });
+        expect(passwordValidator(missingUppercasePassword)).toHaveProperty('result', false);
     })
 })
 
