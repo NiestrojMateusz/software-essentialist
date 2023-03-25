@@ -84,4 +84,27 @@ describe("Stats Calculator", () => {
 
     expect(result).toHaveProperty('elementsInSequence', expected)
   });
+
+  it.each([
+      {
+        expected: 10.67,
+        numbers: exampleSeq1,
+      },
+      {
+        expected: 12.43,
+        numbers: exampleSeq2,
+      },
+      {
+        expected: 19.25,
+        numbers: exampleSeq3,
+      },
+    ]
+  )
+  ("should calculate numbers average ($expected) for a sequence of integers $numbers", ({expected, numbers}) => {
+    const statsCalc = new StatsCalculator();
+
+    const result = statsCalc.calculate(numbers);
+
+    expect(result).toHaveProperty('avg', expected)
+  });
 });

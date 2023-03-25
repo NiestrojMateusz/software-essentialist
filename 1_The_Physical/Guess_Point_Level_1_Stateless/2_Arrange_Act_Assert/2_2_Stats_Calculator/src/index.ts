@@ -6,8 +6,16 @@ export class StatsCalculator {
             minValue: sortedSequence[0],
             maxValue: sortedSequence[input.length - 1],
             elementsInSequence: input.length,
-            avg: null
+            avg: this.getNumbersAverage(input)
         }
+    }
+
+    private getNumbersAverage(input: number[]) {
+        const sum = input.reduce((acc, num) => {
+            return acc + num;
+        }, 0);
+
+        return parseFloat((sum / input.length).toFixed(2))
     }
 
     private sortNumsAscending(input: number[]) {
