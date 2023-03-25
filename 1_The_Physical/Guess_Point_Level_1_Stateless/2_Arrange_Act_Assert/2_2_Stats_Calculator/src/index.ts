@@ -9,6 +9,10 @@ export class StatsCalculator {
     }
 
     private getMinValue(input: number[]) {
-        return input.sort((a, b) => a - b)[0]
+        return this.sortNumsAscending(input)[0]
+    }
+
+    private sortNumsAscending(input: number[]) {
+        return input.sort((a, b) => a - b)
     }
 }
