@@ -1,5 +1,9 @@
 export class StatsCalculator {
     calculate(input: number[]) {
+        if (!input?.length) {
+            throw Error("No sequence of number provided");
+        }
+
         const sortedSequence = this.sortNumsAscending(input);
 
         return {

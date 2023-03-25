@@ -107,4 +107,10 @@ describe("Stats Calculator", () => {
 
     expect(result).toHaveProperty('avg', expected)
   });
+
+  it.each([[null, []]])('should throw for wrong input i.e %s', (input) => {
+    const statsCalc = new StatsCalculator();
+
+    expect(() => statsCalc.calculate(input as unknown as number[])).toThrow();
+  });
 });
