@@ -5,7 +5,7 @@ export class StatsCalculator {
         return {
             minValue: sortedSequence[0],
             maxValue: sortedSequence[input.length - 1],
-            elementsInSequence: null,
+            elementsInSequence: input.length,
             avg: null
         }
     }
