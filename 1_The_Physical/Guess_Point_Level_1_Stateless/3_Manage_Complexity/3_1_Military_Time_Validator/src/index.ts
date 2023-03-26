@@ -11,9 +11,10 @@ export const militaryTimeValidator = (time: string): boolean => {
 
   const fromDate = new Date(`01-01-2022 ${from}`).getTime();
   const toDate  = new Date(`01-01-2022 ${to}`).getTime();
+  const isFromDateBeforeToDate = fromDate < toDate;
 
 
-  if (isNaN(fromDate) || isNaN(toDate)) return false;
+  if (isNaN(fromDate) || isNaN(toDate) || !isFromDateBeforeToDate) return false;
 
   return true;
 }
