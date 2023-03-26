@@ -5,9 +5,7 @@ export const militaryTimeValidator = (time: string): boolean => {
 
   if (!from || !to) return false;
 
-  const timeFormatRegex = new RegExp(/\d{2}:\d{2}/);
-
-  if (!timeFormatRegex.test(from) || !timeFormatRegex.test(to)) return false;
+  if (!isCorrectTimeFormat(from) || !isCorrectTimeFormat(to)) return false;
 
   const fromDate = new Date(`01-01-2022 ${from}`).getTime();
   const toDate  = new Date(`01-01-2022 ${to}`).getTime();
@@ -17,4 +15,8 @@ export const militaryTimeValidator = (time: string): boolean => {
   if (isNaN(fromDate) || isNaN(toDate) || !isFromDateBeforeToDate) return false;
 
   return true;
+}
+
+export const isCorrectTimeFormat = (time: string, formatRegexp = /\d{2}:\d{2}/) => {
+  return formatRegexp.test(time)
 }
