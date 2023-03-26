@@ -20,4 +20,12 @@ describe('military time validator', () => {
   it('should fail for invalid "from" length part like "0 - 14:00"', () => {
     expect(militaryTimeValidator("0 - 14:00")).toBeFalsy();
   })
+
+  it('should fail for invalid "from" length part like "00 - 14:00"', () => {
+    expect(militaryTimeValidator("00 - 14:00")).toBeFalsy();
+  })
+
+  it('should fail for invalid "from" length part like "000 - 14:00"', () => {
+    expect(militaryTimeValidator("000 - 14:00")).toBeFalsy();
+  })
 })

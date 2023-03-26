@@ -1,7 +1,7 @@
 export const militaryTimeValidator = (time: string): boolean => {
   if (!time.includes("-")) return false;
 
-  const [from, to] = time.split('-');
+  const [from, to] = time.replace(" ", "").split('-');
 
   if (!from || !to) return false;
 
