@@ -10,8 +10,9 @@ export const militaryTimeValidator = (time: string): boolean => {
   if (!timeFormatRegex.test(from) || !timeFormatRegex.test(to)) return false;
 
   const fromDate = new Date(`01-01-2022 ${from}`);
+  const toDate  = new Date(`01-01-2022 ${to}`);
 
-  if (isNaN(fromDate.getTime())) return false;
+  if (isNaN(fromDate.getTime()) || isNaN(toDate.getTime())) return false;
 
   return true;
 }
