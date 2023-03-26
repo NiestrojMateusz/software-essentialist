@@ -9,4 +9,11 @@ describe('military time validator', () => {
     expect(militaryTimeValidator("12:00 16:00")).toBeFalsy();
   });
 
+  it('should fail for missing "from" part "14:00 -"', () => {
+    expect(militaryTimeValidator("14:00 -")).toBeFalsy();
+  })
+
+  it('should fail for missing "to" part "- 16:00"', () => {
+    expect(militaryTimeValidator("14:00 -")).toBeFalsy();
+  })
 })
