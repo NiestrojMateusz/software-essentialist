@@ -1,3 +1,5 @@
 export const militaryTimeValidator = (time: string): boolean => {
-  return false;
+  if (!time.includes("-")) return false;
+
+  return true;
 }

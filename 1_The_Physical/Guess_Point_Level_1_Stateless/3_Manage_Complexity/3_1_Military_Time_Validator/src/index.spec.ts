@@ -5,6 +5,8 @@ describe('military time validator', () => {
      expect(militaryTimeValidator("")).toBeFalsy();
   })
 
-
+  it('should fail when hyphen separator is missing', () => {
+    expect(militaryTimeValidator("12:00 16:00")).toBeFalsy();
+  });
 
 })
