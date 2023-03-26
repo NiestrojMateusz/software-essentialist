@@ -50,4 +50,8 @@ describe('military time validator', () => {
   ])('should pass for correct military time string as %s', (time) => {
     expect(militaryTimeValidator(time)).toBeTruthy();
   })
+
+  it('should fail for incorrect military time string as "25:00 - 12:23"', () => {
+    expect(militaryTimeValidator("25:00 - 12:23")).toBeFalsy();
+  });
 })
