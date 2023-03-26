@@ -5,5 +5,7 @@ export const militaryTimeValidator = (time: string): boolean => {
 
   if (!from || !to) return false;
 
+  if (from.length < 4) return false;
+
   return true;
 }
