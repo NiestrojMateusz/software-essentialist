@@ -29,4 +29,17 @@ describe('military time validator', () => {
   ])('should fail for invalid "from" part format like "%s - 14:00"', (from) => {
     expect(militaryTimeValidator(`${from} - 14:00`)).toBeFalsy();
   })
+
+  it.each([
+    "0",
+    "00",
+    "000",
+    "0000",
+    "00000",
+    "::::",
+    "0:00",
+    ":00",
+  ])('should fail for invalid "to" part format like "14:00 - %s"', (to) => {
+    expect(militaryTimeValidator(`14:00 - ${to}`)).toBeFalsy();
+  })
 })
