@@ -51,15 +51,11 @@ describe('military time validator', () => {
     expect(militaryTimeValidator(time)).toBeTruthy();
   })
 
-  it('should fail for incorrect military time string as "25:00 - 12:23"', () => {
-    expect(militaryTimeValidator("25:00 - 12:23")).toBeFalsy();
-  });
-
-  it('should fail for incorrect military time string as "12:00 - 25:00"', () => {
-    expect(militaryTimeValidator("12:00 - 25:00")).toBeFalsy();
-  });
-
-  it('should fail for incorrect military time string as "12:01 - 12:00"', () => {
-    expect(militaryTimeValidator("12:01 - 12:00")).toBeFalsy();
+  it.each([
+    "25:00 - 12:23",
+    "12:00 - 25:00",
+    "12:01 - 12:00"
+  ])('should fail for incorrect military time string as %s', (time) => {
+    expect(militaryTimeValidator(time)).toBeFalsy();
   });
 })
