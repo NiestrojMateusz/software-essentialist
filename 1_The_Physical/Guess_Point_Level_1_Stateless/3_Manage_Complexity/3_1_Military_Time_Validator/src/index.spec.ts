@@ -17,15 +17,27 @@ describe('military time validator', () => {
     expect(militaryTimeValidator("14:00 -")).toBeFalsy();
   })
 
-  it('should fail for invalid "from" length part like "0 - 14:00"', () => {
+  it('should fail for invalid "from" format part like "0 - 14:00"', () => {
     expect(militaryTimeValidator("0 - 14:00")).toBeFalsy();
   })
 
-  it('should fail for invalid "from" length part like "00 - 14:00"', () => {
+  it('should fail for invalid "from" format part like "00 - 14:00"', () => {
     expect(militaryTimeValidator("00 - 14:00")).toBeFalsy();
   })
 
-  it('should fail for invalid "from" length part like "000 - 14:00"', () => {
+  it('should fail for invalid "from" format part like "000 - 14:00"', () => {
     expect(militaryTimeValidator("000 - 14:00")).toBeFalsy();
+  })
+
+  it('should fail for invalid "from" format part like "0000 - 14:00"', () => {
+    expect(militaryTimeValidator("0000 - 14:00")).toBeFalsy();
+  })
+
+  it('should fail for invalid "from" format part like "0::0 - 14:00"', () => {
+    expect(militaryTimeValidator("0::0 - 14:00")).toBeFalsy();
+  })
+
+  it('should fail for invalid "from" format part like "0::0 - 14:00"', () => {
+    expect(militaryTimeValidator("0::0 - 14:00")).toBeFalsy();
   })
 })

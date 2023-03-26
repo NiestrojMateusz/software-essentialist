@@ -5,7 +5,9 @@ export const militaryTimeValidator = (time: string): boolean => {
 
   if (!from || !to) return false;
 
-  if (from.length < 4) return false;
+  const timeFormatRegex = new RegExp(/\d{2}:\d{2}/);
+
+  if (!timeFormatRegex.test(from)) return false;
 
   return true;
 }
