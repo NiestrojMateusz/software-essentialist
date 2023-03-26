@@ -54,7 +54,8 @@ describe('military time validator', () => {
   it.each([
     "25:00 - 12:23",
     "12:00 - 25:00",
-    "12:01 - 12:00"
+    "12:01 - 12:00",
+    "00:00 - 00:00"
   ])('should fail for incorrect military time string as %s', (time) => {
     expect(militaryTimeValidator(time)).toBeFalsy();
   });
